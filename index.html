@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="db/manifest.json">
+</head>
+<body onload="inicia()">
+  <h1>Jogo da Velha</h1>
+  <div id="board"></div>
+  <div id="aviso"></div>
+  <button onclick="reiniciar()">Reiniciar</button>
+
+  <script src="js/script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('Service Worker registrado!'));
+    }
+  </script>
+</body>
+</html>

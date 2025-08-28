@@ -1,0 +1,23 @@
+{
+  "name": "Jogo da Velha",  /* Nome do aplicativo */
+  "short_name": "Meu  PWA",   /* Nome curto do aplicativo */
+  "description": "Um simples jogo da velha como um aplicativo web progressivo (PWA).",  /* Descrição do aplicativo */
+  "start_url": "https://thay2024.github.io/Jogo-da-Velha/",   /* URL de início do aplicativo */
+  "display": "standalone",   /* Modo de exibição */
+  "background_color": "#f4f4f9",    /* Cor de fundo */
+  "theme_color": "#1d3557",   /* Cor do tema */
+  "scope": "https://thay2024.github.io/Jogo-da-Velha/",   /* Define os links a serem abertos */
+  "icons": [      /* Ícones do aplicativo */
+    {
+      "src": "icon.png",   /* Caminho para o ícone */
+      "sizes": "192x192",  /* Tamanho do ícone */
+      "type": "image/png"   /* Tipo do ícone */
+    }
+  ],
+
+  "lang": "pt-BR",  /* Idioma do aplicativo */
+  "dir": "auto",  /* Direção do texto */
+  "categories": ["games", "puzzle"],  /* Categorias do aplicativo */
+  "id": "/Jogo-da-Velha",  /* Identificador único do aplicativo */
+  "orientation": "any"  /* Orientação da tela */
+}

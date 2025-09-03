@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="db/manifest.json">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./db/velha.png" type="image/png">
+
 
   <title>Jogo da Velha</title>
+  
   
 </head>
 <body onload="inicia()">
@@ -16,6 +19,11 @@
   <button onclick="reiniciar()">Reiniciar</button>
 
   <script src="js/script.js"></script>
-  
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('Service Worker registrado!'));
+    }
+  </script>
 </body>
 </html>

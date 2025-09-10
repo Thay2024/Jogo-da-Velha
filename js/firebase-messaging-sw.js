@@ -3,23 +3,33 @@
 const CACHE = "pwabuilder-offline-page";
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
+importScripts("https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js");
+importScripts("https://www.gstatic.com/firebasejs/12.2.1/firebase-messaging.js");
 
+const firebaseConfig = {
+  apiKey: "AIzaSyAX3v0UTgBvmNSAJ7quOSsOkt_x2KLJprc",
+  authDomain: "notifq-pwa.firebaseapp.com",
+  projectId: "notifq-pwa",
+  storageBucket: "notifq-pwa.firebasestorage.app",
+  messagingSenderId: "1059584773060",
+  appId: "1:1059584773060:web:0361e047071511fef2f291",
+  measurementId: "G-W1JG5F4RV0"
+};
 
+const app = initializeApp(firebaseConfig);
+const messaging = firebaseConfig.messaging();
 
-if(typeof navigator.serviceWorker !== 'undefined'){
+messaging.onBackgroundMessage((ms) => {
+  console.log("[firebase-messaging-sw.js] Mensagem recebida ", ms);
+  const notificacaoTitulo = ms.notification.title;
+  const notificacaoOpcao = {
+    body: ms.notification.body,
+    icon: "/velha.png"
+   
+  }
+  self.registration.showNotification(notificacaoTitulo, notificacaoOpcao);
 
-  navigator.serviceWorker.register('pwabuilder-sw.js');
-
-}
-
-if ("setAppBadge" in navigator) {
-  navigator.setAppBadge(1);
-
-}
-Notification.requestPermission();
-
-
-
+});
 
 
 self.addEventListener("push", (event) => {

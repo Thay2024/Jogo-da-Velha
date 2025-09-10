@@ -80,3 +80,15 @@ function reiniciar() {
   inicia();
 }
 
+
+if(typeof navigator.serviceWorker !== 'undefined'){
+
+  navigator.serviceWorker.register('pwabuilder-sw.js');
+
+}
+
+if ("setAppBadge" in navigator) {
+  navigator.setAppBadge(1);
+
+}
+Notification.requestPermission();

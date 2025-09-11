@@ -1,10 +1,10 @@
 // This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
 
-const CACHE = "pwabuilder-offline-page";
+
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
-importScripts("https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js");
-importScripts("https://www.gstatic.com/firebasejs/12.2.1/firebase-messaging.js");
+import {initializeApp} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import {getMessaging} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-messaging.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAX3v0UTgBvmNSAJ7quOSsOkt_x2KLJprc",
@@ -16,7 +16,7 @@ const firebaseConfig = {
   measurementId: "G-W1JG5F4RV0"
 };
 
-const app = initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 const messaging = firebaseConfig.messaging();
 
 messaging.onBackgroundMessage((ms) => {
@@ -31,6 +31,10 @@ messaging.onBackgroundMessage((ms) => {
 
 });
 
+
+
+
+const CACHE = "pwabuilder-offline-page";
 
 self.addEventListener("push", (event) => {
   event.waitUntil(self.registration.showNotification("Acesse agora as promoções", {

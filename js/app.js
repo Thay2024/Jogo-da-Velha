@@ -1,3 +1,8 @@
+
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
+import {initializeApp} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import {getMessaging} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-messaging.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyAX3v0UTgBvmNSAJ7quOSsOkt_x2KLJprc",
   authDomain: "notifq-pwa.firebaseapp.com",

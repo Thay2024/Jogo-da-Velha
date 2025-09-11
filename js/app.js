@@ -9,7 +9,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const messaging = firebase.messaging();
+const messaging = getMessaging(app);
 
 function solicitarPermissao() {
     Notification.requestPermission().then((permissao) => {
